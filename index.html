@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluare Energetică și Emoțională - LiveLoveEnjoy</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --light-gold: #f4ecd8;
+            --dark-text: #2c2c2c;
+            --bg-color: #fdfbf7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid var(--light-gold);
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            max-width: 180px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        p.subtitle {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        /* Formular */
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Butoane */
+        .btn {
+            background-color: var(--gold);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #b8932e;
+            transform: translateY(-2px);
+        }
+
+        /* Întrebări */
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .options-list {
+            list-style: none;
+        }
+
+        .option-item {
+            background: #fff;
+            border: 1px solid #e2e2e2;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .option-item:hover {
+            background-color: var(--light-gold);
+            border-color: var(--gold);
+        }
+
+        /* Rezultat */
+        .result-title {
+            font-size: 22px;
+            color: var(--gold);
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .result-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebd59;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background-color: #eee;
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--gold);
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Secțiune Logo -->
+    <div class="logo-container">
+        <!-- Înlocuiește logo.png cu link-ul sau imaginea ta oficială -->
+        <img src="logo.png" alt="Live Love Enjoy Logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+        <h2 id="logo-fallback" style="display:none; color: var(--gold); font-style: italic;">Live Love Enjoy</h2>
+    </div>
+
+    <!-- PASUL 1: Formular Date Utilizator -->
+    <div id="step-form" class="step active">
+        <h1>Evaluare Energetică și Emoțională</h1>
+        <p class="subtitle">Descoperă terapia potrivită sufletului tău în acest moment</p>
+        
+        <div class="form-group">
+            <label for="username">Nume Complet</label>
+            <input type="text" id="username" placeholder="Introduceți numele dvs." required>
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Data Nașterii</label>
+            <input type="date" id="birthdate" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Număr de Telefon</label>
+            <input type="tel" id="phone" placeholder="Ex: 0733121019" required>
+        </div>
+        
+        <button class="btn" onclick="startQuiz()">Începe Testul</button>
+    </div>
+
+    <!-- PASUL 2: Zona Chestionarului -->
+    <div id="step-quiz" class="step">
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <h1 id="question-number">Întrebarea 1 din 5</h1>
+        <p id="question-text" class="question-text">Textul întrebării va apărea aici.</p>
+        <ul id="options-list" class="options-list">
+            <!-- Opțiunile se vor genera din JavaScript -->
+        </ul>
+    </div>
+
+    <!-- PASUL 3: Pagina de Rezultat -->
+    <div id="step-result" class="step">
+        <h1>Rezultatul Evaluării Tale</h1>
+        <div id="result-title" class="result-title">Terapia Recomandată</div>
+        <p id="result-desc" class="result-desc">Descrierea terapiei.</p>
+        
+        <a id="whatsapp-link" href="#" target="_blank" class="btn whatsapp-btn">
+            Trimite rezultatele și programează-te
+        </a>
+    </div>
+</div>
+
+<script>
+    // DATE CONFIGURARE (Aici modifici pentru Email)
+    // Pentru a primi emailuri, creează un cont gratuit pe https://formspree.io, generează un cod (form ID) și pune-l mai jos.
+    const FORMSPREEE_ENDPOINT = "https://formspree.io"; // Înlocuiește XXXXXX cu ID-ul tău Formspree
+
+    // Date utilizator salvate local
+    let userData = { name: "", birthdate: "", phone: "" };
+    
+    // Scorul pentru terapii
+    let scores = { A: 0, B: 0, C: 0, D: 0 };
+    let currentQuestionIndex = 0;
+
+    // Întrebările din test
+    const questions = [
+        {
+            text: "Cum te simți cel mai des în ultima perioadă la nivel mental?",
+            options: [
+                { text: "Am mintea aglomerată, gânduri repetitive și mă simt mereu stresat(ă).", type: "A" },
+                { text: "Simt o oboseală fizică și un dezechilibru general în corp, fără vitalitate.", type: "B" },
+                { text: "Simt că mi-am pierdut entuziasmul și bucuria de a trăi, rutina mă apasă.", type: "C" },
+                { text: "Mă simt confuz(ă) în privința direcției mele în viață și am nevoie de răspunsuri.", type: "D" }
+            ]
+        },
+        {
+            text: "Care este cel mai mare blocaj pe care îl resimți în acest moment?",
+            options: [
+                { text: "Incapacitatea de a mă relaxa și de a opri „zgomotul” din capul meu.", type: "A" },
+                { text: "O stare de agitație în corp sau emoții fluctuante pe care nu le pot controla.", type: "B" },
+                { text: "Lipsa conexiunii cu mine însumi și cu propria mea valoare.", type: "C" },
+                { text: "Sentimentul că bat pasul pe loc și nu înțeleg mesajul din spatele blocajelor.", type: "D" }
+            ]
+        },
+        {
+            text: "Dacă ai putea primi un ajutor chiar acum, ce ai alege?",
+            options: [
+                { text: "Un „buton de reset” pentru minte, ca să scap de griji și credințe limitative.", type: "A" },
+                { text: "O metodă naturală prin care să îmi curăț și să îmi reîncarc centrii energetici (chakrele).", type: "B" },
+                { text: "Un ghidaj pas cu pas pentru a mă transforma din interior și a-mi recăpăta starea de bine.", type: "C" },
+                { text: "O perspectivă spirituală, intuitivă, care să îmi dezvăluie ce se află în câmpul energetic.", type: "D" }
+            ]
+        },
+        {
+            text: "Ce mediu sau stare îți aduce cea mai mare relaxare?",
+            options: [
+                { text: "Liniștea totală, momentele în care nu trebuie să mă gândesc la absolut nimic.", type: "A" },
+                { text: "Conexiunea cu natura, cu pământul, cu elementele pure și liniștitoare.", type: "B" },
+                { text: "Starea de inspirație, creativitate și bucurie împărtășită cu oameni dragi.", type: "C" },
+                { text: "Momentele de meditație, introspecție și conectare cu intuiția mea profundă.", type: "D" }
+            ]
+        },
+        {
+            text: "Care este intenția ta principală în urma acestei evaluări?",
+            options: [
