@@ -198,7 +198,6 @@
 <div class="container">
     <!-- Secțiune Logo -->
     <div class="logo-container">
-        <!-- Înlocuiește logo.png cu link-ul sau imaginea ta oficială -->
         <img src="logo.png" alt="Live Love Enjoy Logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
         <h2 id="logo-fallback" style="display:none; color: var(--gold); font-style: italic;">Live Love Enjoy</h2>
     </div>
@@ -249,24 +248,19 @@
 </div>
 
 <script>
-    // DATE CONFIGURARE (Aici modifici pentru Email)
-    // Pentru a primi emailuri, creează un cont gratuit pe https://formspree.io, generează un cod (form ID) și pune-l mai jos.
-    const FORMSPREEE_ENDPOINT = "https://formspree.io"; // Înlocuiește XXXXXX cu ID-ul tău Formspree
+    // Configurare Formspree (Dacă nu îl folosești încă, lasă-l așa, dar nu va trimite emailuri)
+    const FORMSPREEE_ENDPOINT = "https://formspree.io"; 
 
-    // Date utilizator salvate local
     let userData = { name: "", birthdate: "", phone: "" };
-    
-    // Scorul pentru terapii
     let scores = { A: 0, B: 0, C: 0, D: 0 };
     let currentQuestionIndex = 0;
 
-    // Întrebările din test
     const questions = [
         {
             text: "Cum te simți cel mai des în ultima perioadă la nivel mental?",
             options: [
                 { text: "Am mintea aglomerată, gânduri repetitive și mă simt mereu stresat(ă).", type: "A" },
-                { text: "Simt o oboseală fizică și un dezechilibru general în corp, fără vitalitate.", type: "B" },
+                { text: "Simt o oboseală physicală și un dezechilibru general în corp, fără vitalitate.", type: "B" },
                 { text: "Simt că mi-am pierdut entuziasmul și bucuria de a trăi, rutina mă apasă.", type: "C" },
                 { text: "Mă simt confuz(ă) în privința direcției mele în viață și am nevoie de răspunsuri.", type: "D" }
             ]
@@ -301,3 +295,7 @@
         {
             text: "Care este intenția ta principală în urma acestei evaluări?",
             options: [
+                { text: "Să eliberez stresul acumulat și să am o minte limpede.", type: "A" },
+                { text: "Să îmi armonizeze energia corpului și să mă simt protejat(ă).", type: "B" },
+                { text: "Să învăț să trăiesc frumos, să mă iubesc și să mă bucur de viață.", type: "C" },
+
